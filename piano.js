@@ -1,0 +1,13 @@
+const keys = document.querySelectorAll('.key')
+const whiteKeys = document.querySelectorAll('.key.white')
+const blackKeys = document.querySelectorAll('.key.black')
+
+keys.forEach(key => {
+  key.addEventListener('click', () => playNote(key))
+})
+
+function playNote(key) {
+  const noteAudio = document.getElementById(key.dataset.note)
+  noteAudio.currentTime = 0
+  noteAudio.play()
+}
